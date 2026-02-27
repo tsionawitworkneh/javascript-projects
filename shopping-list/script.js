@@ -49,9 +49,16 @@ const updateUI = () => {
 };
 
 function addItem() {
-    const name = itemNameInput.value.trim();
-    if (name !== '') {
-        items.push(name);
+    const nameValue = itemNameInput.value.trim();
+    
+    if (nameValue !== '') {
+        // Create an object instead of just a string
+        const newItem = {
+            name: nameValue,
+            checked: false
+        };
+        
+        items.push(newItem);
         itemNameInput.value = ''; // Clear input box
         updateUI();
     }
