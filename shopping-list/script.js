@@ -3,7 +3,11 @@ const itemNameInput = document.getElementById('item-name');
 const shoppingList = document.getElementById('shopping-list');
 const emptyState = document.getElementById('empty-state');
 
-let items = [];
+let items = JSON.parse(localStorage.getItem('myShoppingList')) || [];
+
+function saveToStorage() {
+    localStorage.setItem('myShoppingList', JSON.stringify(items));
+}
 
 const updateUI = () => {
     // Show/Hide empty state
@@ -41,6 +45,8 @@ const updateUI = () => {
                 textSpan.classList.remove('completed');
                 items[index].checked = false; 
             }
+
+            saveToStorage();
         });
 
 
@@ -60,12 +66,14 @@ function addItem() {
         
         items.push(newItem);
         itemNameInput.value = ''; // Clear input box
+        saveToStorage();
         updateUI();
     }
 }
 
 function deleteItem(index) {
     items.splice(index, 1);
+    saveToStorage();
     updateUI();
 }
 
@@ -74,4 +82,6 @@ addBtn.addEventListener('click', addItem);
 itemNameInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') addItem();
 });
+
+updateUI();
 
