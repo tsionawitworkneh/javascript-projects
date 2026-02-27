@@ -49,7 +49,7 @@ body {
     border: 1px solid #ccc;
 }
 
-.input-section input:focus{
+.input-section input:focus {
     border-color: #2563eb;
     outline: none;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
@@ -70,19 +70,35 @@ body {
 #shopping-list {
     list-style: none;
     padding: 10px 25px;
-    
+
 }
 
 .list-item {
     display: flex;
     justify-content: space-between;
-    padding: 12px 6px;
+    padding: 12px 10px;
     border-bottom: 1px solid #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 0.8rem;
 }
 
+.check {
+    margin-right: 0.5rem;
+    accent-color: green;
+    height: 20px;
+    width: 18px;
+    align-items: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.list-item button{
+    font-size: 1.1rem;
+}
 
 .empty-container {
     display: flex;
@@ -99,12 +115,12 @@ body {
     color: #cbd5e1;
 }
 
-.hidden { 
-    display: none; 
+.hidden {
+    display: none;
 }
 
-@media (max-width: 768px){
-    .container{
+@media (max-width: 768px) {
+    .container {
         margin: 4rem 2rem;
     }
 
