@@ -66,6 +66,52 @@ body {
     cursor: pointer;
 }
 
+
+.input-group {
+    margin-bottom: 20px;
+    
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 1.5rem;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 20px;
+    width: 18px;
+    color: var(--text-muted);
+}
+
+.input-wrapper input {
+    width: 60%;
+    padding: 16px 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+    
+}
+
+.input-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    color: var(--text-muted);
+    transition: 0.3s;
+}
+
+.input-icon.left {
+    left: 0;
+}
+
+
 /* List Styles */
 #shopping-list {
     list-style: none;

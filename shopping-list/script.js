@@ -2,8 +2,10 @@ const addBtn = document.getElementById('add-btn');
 const itemNameInput = document.getElementById('item-name');
 const shoppingList = document.getElementById('shopping-list');
 const emptyState = document.getElementById('empty-state');
+const searchInput = document.getElementById('search');
 
 let items = JSON.parse(localStorage.getItem('myShoppingList')) || [];
+let searchTerm = "";
 
 function saveToStorage() {
     localStorage.setItem('myShoppingList', JSON.stringify(items));
@@ -21,6 +23,10 @@ const updateUI = () => {
     shoppingList.innerHTML = '';
     
     items.forEach((item, index) => {
+        if (!item.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+            return; 
+        }
+
         const li = document.createElement('li');
         li.className = 'list-item';
         li.innerHTML = `
@@ -28,7 +34,7 @@ const updateUI = () => {
                 <input type="checkbox" class="check" ${item.checked ? 'checked' : ''}>
                 <span class="${item.checked ? 'completed' : ''}">${item.name}</span>
             </div>
-            <button onclick="deleteItem(${index})" style="background:none; border:none; color:red; cursor:pointer;">
+            <button class="del-btn" style="background:none; border:none; color:red; cursor:pointer;">
                 <i class="fa-regular fa-trash-can"></i>
             </button>
         `;
@@ -53,6 +59,11 @@ const updateUI = () => {
         shoppingList.appendChild(li);
     });
 };
+
+searchInput.addEventListener('input', (e) => {
+    searchTerm = e.target.value; // Update the search term
+    updateUI(); // Re-draw the list
+});
 
 function addItem() {
     const nameValue = itemNameInput.value.trim();
