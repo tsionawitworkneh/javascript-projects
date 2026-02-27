@@ -41,7 +41,6 @@ function displayUser(user) {
             <div><strong>${user.following}</strong><br>Following</div>
         </div>
 
-        <p class="user-info"><i class="fa-solid fa-location-dot"></i> ${user.location || 'Remote'}</p>
         
         <a href="${user.html_url}" target="_blank" class="github-link">View GitHub Profile</a>
     `;

@@ -14,9 +14,7 @@ body {
 .app-container {
     width: 800px;
     height: 90%;
-    margin: 4rem auto;
-
-
+    margin: 1.5rem auto;
 }
 
 .header {
@@ -41,9 +39,9 @@ body {
 }
 
 .find-btn {
-    padding: 10px;
-    font-weight: 600;
-    font-size: 1.3rem;
+    padding: 10px 3rem 12px;
+    font-weight: 500;
+    font-size: 1.2rem;
     color: #fff;
     border: none;
     border-radius: 4px;
