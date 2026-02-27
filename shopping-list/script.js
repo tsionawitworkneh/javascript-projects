@@ -2,10 +2,12 @@ const addBtn = document.getElementById('add-btn');
 const itemNameInput = document.getElementById('item-name');
 const shoppingList = document.getElementById('shopping-list');
 const emptyState = document.getElementById('empty-state');
-const searchInput = document.getElementById('search');
+
+
+
 
 let items = JSON.parse(localStorage.getItem('myShoppingList')) || [];
-let searchTerm = "";
+
 
 function saveToStorage() {
     localStorage.setItem('myShoppingList', JSON.stringify(items));
@@ -56,10 +58,34 @@ const updateUI = () => {
     });
 };
 
-searchInput.addEventListener('input', (e) => {
-    searchTerm = e.target.value; // Update the search term
-    updateUI(); // Re-draw the list
-});
+function searchItems() {
+    // 1. Get the search input and the filter text
+    const input = document.getElementById('search');
+    const filter = input.value.toUpperCase();
+    
+    // 2. Get the list and all the <li> items
+    const ul = document.getElementById("shopping-list");
+    const li = ul.getElementsByTagName('li');
+
+    // 3. Loop through all list items
+    for (let i = 0; i < li.length; i++) {
+        // Find the span that contains the item name
+        const span = li[i].querySelector("span");
+        if (span) {
+            const txtValue = span.textContent || span.innerText;
+            
+            // 4. If the text matches, show it. Otherwise, hide it.
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+}
+
+// Attach it to the search bar
+document.getElementById('search').addEventListener('keyup', searchItems);
 
 function addItem() {
     const nameValue = itemNameInput.value.trim();

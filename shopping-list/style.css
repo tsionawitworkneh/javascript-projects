@@ -44,7 +44,7 @@ body {
 
 .input-section input {
     width: 650px;
-    padding: 0.6rem;
+    padding: 1rem;
     border-radius: 4px;
     border: 1px solid #ccc;
 }
