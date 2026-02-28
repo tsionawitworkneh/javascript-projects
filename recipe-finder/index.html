@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fa-solid fa-utensils"></i>
+            <h1>Recipe Finder</h1>
+            <p>Search for delicious recipes by ingrdients or dish name</p>
+        </div>
+
+        <div class="input-group">
+            <div class="input-wrapper">
+                <span class="input-icon left">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="text" id="search" placeholder="search a food name(e.g fish, chicken...)">
+                <button type="submit" class="search-btn" id="search-btn">Search</button>
+            </div>
+        </div>
+
+        <div class="empty-state" id="empty">
+            <div class="empty-content">
+                <div class="circle-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <h3>Start Your Culinary Journey</h3>
+                <p>Enter any ingredient or dish name to discover amazing recipes</p>
+            </div>
+
+            <div class="samples">
+                <button type="button" class="sample">Chicken</button>
+                <button type="button" class="sample">Pasta</button>
+                <button type="button" class="sample">Cake</button>
+                <button type="button" class="sample">Fish</button>
+                <button type="button" class="sample">Sushi</button>
+            </div>
+
+            <div class="recipies">
+                <div class="card" id="recipe-card">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
