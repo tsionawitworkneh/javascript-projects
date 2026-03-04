@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tracalorie</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-area">
+                <i class="fas fa-utensils logo-icon"></i>
+
+                <div class="header-txt">
+                    <h4>Tracalorie</h4>
+                    <p>Track Your Calories & Stay Healthy</p>
+                </div>
+            </div>
+
+            <button class="btn-reset"><i class="fas fa-redo"></i> Reset Day</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="icon-box blue"><i class="fas fa-fire"></i></div>
+                    <span class="label">TOTAL</span>
+                </div>
+                <div class="stat-value">0</div>
+                <div class="stat-unit">Calories</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="icon-box green"><i class="fas fa-utensils"></i></div>
+                    <span class="label">CONSUMED</span>
+                </div>
+                <div class="stat-value">0</div>
+                <div class="stat-unit">Calories</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="icon-box orange"><i class="fas fa-dumbbell"></i></div>
+                    <span class="label">BURNED</span>
+                </div>
+                <div class="stat-value">0</div>
+                <div class="stat-unit">Calories</div>
+            </div>
+
+            <div class="stat-card purple-bg">
+                <div class="stat-header">
+                    <div class="icon-box white-trans"><i class="fas fa-apple-alt"></i></div>
+                    <span class="label">REMAINING</span>
+                </div>
+                <div class="stat-value">2000</div>
+                <div class="stat-unit">Calories Left</div>
+            </div>
+
+        </section>
+
+
+        <!-- Goal Section -->
+        <section class="goal-card">
+            <div class="goal-info">
+                <div class="icon-box-large purple"><i class="fas fa-bullseye"></i></div>
+                <div>
+                    <h3>Daily Calorie Limit</h3>
+                    <p>Set your daily calorie goal</p>
+                </div>
+            </div>
+            <div class="goal-action">
+                <span class="goal-number">2000</span>
+                <span class="goal-unit">calories/day</span>
+                <button class="edit-btn"><i class="fas fa-pencil"></i></button>
+            </div>
+        </section>
+
+
+        <!-- Tracking Sections -->
+        <section class="tracking-grid">
+            <!-- Meals -->
+            <div class="tracking-card">
+                <div class="card-header green-bg">
+                    <div class="header-title">
+                        <div class="header-icon"><i class="fas fa-utensils"></i></div>
+                        <div>
+                            <h4>Meals</h4>
+                            <p>0 calories consumed</p>
+                        </div>
+                    </div>
+                    <button class="add-btn"><i class="fas fa-plus"></i> Add Meal</button>
+                </div>
+                <div class="card-body">
+                    <div class="empty-state">
+                        <div class="empty-icon"><i class="fas fa-utensils"></i></div>
+                        <p>No meals added yet</p>
+                        <small>Click "Add Meal" to start tracking</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workouts -->
+            <div class="tracking-card">
+                <div class="card-header orange-bg">
+                    <div class="header-title">
+                        <div class="header-icon"><i class="fas fa-dumbbell"></i></div>
+                        <div>
+                            <h4>Workouts</h4>
+                            <p>0 calories burned</p>
+                        </div>
+                    </div>
+                    <button class="add-btn"><i class="fas fa-plus"></i> Add Workout</button>
+                </div>
+                <div class="card-body">
+                    <div class="empty-state">
+                        <div class="empty-icon"><i class="fas fa-dumbbell"></i></div>
+                        <p>No workouts logged yet</p>
+                        <small>Click "Add Workout" to start tracking</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
